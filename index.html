@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS FullScreen Slider</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    border: 2px solid #000;
+}
+section .slide{
+    position: relative;
+    background: #212121;
+    height: 100%;
+    flex: 1;
+    border-right: 2px solid #000;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+section .slide:last-child{
+    border-right: none;
+}
+section .slide:hover{
+    flex-grow:5;
+}
+section .slide:nth-child(1){
+    background: url(https://cdn.pixabay.com/photo/2016/07/26/09/06/algeria-1542332_960_720.jpg);
+    background-position: center center;
+}
+
+
+section .slide:nth-child(2){
+    background: url(https://cdn.pixabay.com/photo/2019/09/20/23/50/sand-4492764_960_720.jpg);
+    background-position: center center;
+}
+section .slide:nth-child(3){
+    background: url(https://cdn.pixabay.com/photo/2019/08/15/12/22/biskra-4407938_960_720.jpg);
+    background-position: center center;
+}
+section .slide:nth-child(4){
+    background: url(https://cdn.pixabay.com/photo/2017/08/15/07/28/mediterranean-2642995_960_720.jpg);
+    background-position: center center;
+}
+section .slide:nth-child(5){
+    background: url("https://cdn.pixabay.com/photo/2017/05/15/21/58/oran-2316242_960_720.jpg");
+    background-position: center center;
+}
+section .slide .content{
+    position: absolute;
+    bottom: 0;
+    margin: 40px;
+    padding: 30px;
+    background: #000;
+    color:#fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(100px);
+}
+section .slide:hover .content{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+    <section>
+        <div class="slide">
+            <div class="content">
+                <h2>Algerie</h2>
+                <p>Le drapeau de l'Algérie (en arabe : علم الجزائر, en berbère : Annay adzayri), est constitué de deux bandes verticales d'égale largeur, verte à la hampe et blanche au vent, et comporte en son milieu un croissant rouge entourant une étoile à cinq branches, issus du symbolisme islamique. Diverses versions prétendent retracer la création du drapeau actuel et le font remonter à la fin des années 1920 ou au milieu des années 1930, il a connu diverses ébauches au cours de l'histoire du mouvement national algérien avant d'acquérir sa forme actuelle</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h2>Sahara</h2>
+                <p>Le Sahara algérien (arabe :الصحراء الجزائرية, également appelé le Grand Sud algérien) est la partie du Sahara faisant partie du territoire algérien. Cet espace s'est structuré progressivement au cours de l'histoire de l'Algérie1. Il est situé dans le sud du pays et couvre près de 90 % de sa superficie. Il abrite en 2018 une population de 3 600 000 habitants, soit 10,5 % de la population algérienne.</p>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <div class="content">
+                <h2>Biskra</h2>
+                <p>Biskra (en arabe : بسكرة, en chaoui Tibeskert) est une commune du Nord-est du Sahara algérien, chef-lieu de la wilaya de Biskra, située à 400 km environ au sud-est d'Alger.
+
+Capitale des Ziban et premier pôle urbain saharien, la ville comptait 205 608 habitants en 2008 et se place au 10e rang au niveau national. Elle est située sur un point stratégique, car elle est la porte du désert du Sahara.
+
+La ville est entourée par les monts du Zab. L'activité agricole est très présente, notamment pour la culture des dattes. Localisée au début du désert du Sahara, Biskra possède un climat désertique chaud.!</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h2>Béjaia</h2>
+                <p>Béjaïa (en berbère : ⴲⴳⴰⵢⵜ, Vgayeth (falsifications "Bgayet" ou Ḇgayet)4,5, en arabe : بجاية, anc. Bougie6), est une commune algérienne située en bordure de la mer Méditerranée, à 220 km à l'est d'Alger. Elle est le chef-lieu de la wilaya de Béjaïa et de la daïra de Béjaïa, en Kabylie.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h2>ORAN</h2>
+                <p>Oran (en arabe : وهران, Wahrān ; en berbère ⵡⴰⵀⵔⴻⵏ, prononcée localement [wɑhren], surnommée « la radieuse » (en arabe : الباهية, el-Bāhia, en berbère : ⵜⴰⴼⴰⵡⵜ, Tafawt) et « la Joyeuse »2, est la deuxième plus grande ville d’Algérie3 et une des plus importantes villes du Maghreb. C'est une ville portuaire de la mer Méditerranée, située dans le nord-ouest de l'Algérie, à 432 km de la capitale Alger, et le chef-lieu de la wilaya du même nom, en bordure du golfe d'Oran.</p>
+            </div>
+        </div>
+    </section>
+    // testing atom
+</body>
+</html>
