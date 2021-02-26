@@ -1,123 +1,278 @@
+<html lang="en" dir="ltr">
 
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mysite</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
-    <title>CSS FullScreen Slider</title>
+
 <style>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-section{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    border: 2px solid #000;
-}
-section .slide{
-    position: relative;
-    background: #212121;
-    height: 100%;
-    flex: 1;
-    border-right: 2px solid #000;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
-}
-section .slide:last-child{
-    border-right: none;
-}
-section .slide:hover{
-    flex-grow:5;
-}
-section .slide:nth-child(1){
-    background: url(https://cdn.pixabay.com/photo/2016/07/26/09/06/algeria-1542332_960_720.jpg);
-    background-position: center center;
+body{
+  background-image: url("background.png");
+  background-size:cover;
+  background-position: center;
+  position:relative;
+overflow:hidden;
+
+
+  padding:0;
+   margin:0;
 }
 
 
-section .slide:nth-child(2){
-    background: url(https://cdn.pixabay.com/photo/2019/09/20/23/50/sand-4492764_960_720.jpg);
-    background-position: center center;
+
+.Menu{
+
+  background:#484018;
+  position:fixed;
+  left: 0;
+   height:100%;
+   width:250px;
+  transition: 0.5s;
+  transition-property: left;
+
+overflow-y: auto;
+
 }
-section .slide:nth-child(3){
-    background: url(https://cdn.pixabay.com/photo/2019/08/15/12/22/biskra-4407938_960_720.jpg);
-    background-position: center center;
+.Menu a{
+  display:block;
+  text-decoration: none;
+  line-height:60px;
+  color:#fff;
+  liste-style-type:none;
+  font-size:18px;
+  padding-left:50px;
+  box-sizing: border-box;
+
+
+
 }
-section .slide:nth-child(4){
-    background: url(https://cdn.pixabay.com/photo/2017/08/15/07/28/mediterranean-2642995_960_720.jpg);
-    background-position: center center;
+.Menu a:hover{
+  background:#19B3D3;
 }
-section .slide:nth-child(5){
-    background: url("https://cdn.pixabay.com/photo/2017/05/15/21/58/oran-2316242_960_720.jpg");
-    background-position: center center;
+.Menu i{
+  color:#fff;
+  padding-right:10px;
+  line-height:60px;
 }
-section .slide .content{
-    position: absolute;
-    bottom: 0;
-    margin: 40px;
-    padding: 30px;
-    background: #000;
-    color:#fff;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-    transform: translateY(100px);
+
+label #sidebar_btn{
+  position: fixed;
+  color:#fff;
+  padding-left:280px;
+  padding-top:12px;
+  font-size:20px;
 }
-section .slide:hover .content{
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
-    transition-delay: 0.5s;
-    transform: translateY(0);
+#check:checked ~ .Menu{
+  left:-180px;
+}
+#check:checked ~ .Menu a span{
+  display:none;
+}
+#check:checked ~ .Menu a{
+  font-size:20px;
+  padding-left:197px;
+  line-height:70px;
+
+}
+
+
+#check{
+  display:none;
+}
+label #sidebar_btn:hover{
+  color:#19B3D3;
+}
+
+ .Profile img {
+    padding-top:10px;
+    border-radius: 60%;
+     margin-left:50px;
+     width:100px;
+    height:100px;
+    margin-bottom:10px;
+}
+.Profile h4{
+  padding-left: 60px;
+}
+.Abot_Me{
+position:absolute;
+left:30%;
+top:30%;
+float:left;
+display:block;
+
+}
+.About_Me h1{
+color:#6930c3;
+display:inline;
+padding-left: 60px;
+line-height: 40px;
+
+
+}
+.About_Me span{
+font-size: 20px;
+}
+.About_Me h2{
+text-shadow: 2px 2px 5px #663f3f;
+text-indent: 60px;
+line-height:3px;
+}
+.About_Me h3{
+text-indent: 65px;
+font-size: 16px;
+font-family: "Space Mono", monospace;
+
+
+}
+.Me{
+width:200px;
+height:200px;
+float:left;
+border-radius: 100%;
+
+
+}
+section {
+display: flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+width: 100%;
+height: 100vh;
+}
+section h1{
+font-size: 40px;
+
+}
+.share-button{
+  width: 100px;
+  height:80px;
+  background: #9eb7e5;
+  border-radius: 60px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.share-button:hover{
+  transform: scale(1,1);
+}
+
+.share-button span{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #648de5;
+  color: #212121;
+  text-align: center;
+  line-height: 95px;
+  font-size: 20px;
+  z-index: 999;
+  transition: 0.6s linear;
+  border-radius: 40px;
+
+
+}
+.share-button  :hover span {
+  left:100%;
+  transform: translateX(-100%);
+  transition-delay: 0.3s;
+}
+.share-button a{
+  flex: 1;
+  font-size: 26px;
+  color: #212121;
+  text-align:center;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 0.2 s linear;
+
+}
+.share-button :hover a{
+  opacity: 1;
+  transform: translateX(0);
+}
+.share-button a:nth-child(1){
+  transition-delay: 1.2s:
+}
+.share-button a:nth-child(2){
+  transition-delay: 0.9s:
+}
+.share-button a:nth-child(3){
+  transition-delay: 0.6s:
+}
+.share-button a:nth-child(4){
+  transition-delay: 0.4s:
+}
+.share-button a:hover{
+  transform: scale(1.2);
+  color:#070707;
+  transition-delay: 0s;
+}
+.about{
+  background: black;
 }
 </style>
+
+
+
+
 </head>
-
 <body>
-    <section>
-        <div class="slide">
-            <div class="content">
-                <h2>Algerie</h2>
-                <p>Le drapeau de l'Algérie (en arabe : علم الجزائر, en berbère : Annay adzayri), est constitué de deux bandes verticales d'égale largeur, verte à la hampe et blanche au vent, et comporte en son milieu un croissant rouge entourant une étoile à cinq branches, issus du symbolisme islamique. Diverses versions prétendent retracer la création du drapeau actuel et le font remonter à la fin des années 1920 ou au milieu des années 1930, il a connu diverses ébauches au cours de l'histoire du mouvement national algérien avant d'acquérir sa forme actuelle</p>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="content">
-                <h2>Sahara</h2>
-                <p>Le Sahara algérien (arabe :الصحراء الجزائرية, également appelé le Grand Sud algérien) est la partie du Sahara faisant partie du territoire algérien. Cet espace s'est structuré progressivement au cours de l'histoire de l'Algérie1. Il est situé dans le sud du pays et couvre près de 90 % de sa superficie. Il abrite en 2018 une population de 3 600 000 habitants, soit 10,5 % de la population algérienne.</p>
-            </div>
-        </div>
+
+   <input type="checkbox" id="check">
+<header>
+
+<!--header area start-->
+<label for="check">
+    <i class="fas fa-align-left" id="sidebar_btn"></i>
+  </label>
 
 
-        <div class="slide">
-            <div class="content">
-                <h2>Biskra</h2>
-                <p>Biskra (en arabe : بسكرة, en chaoui Tibeskert) est une commune du Nord-est du Sahara algérien, chef-lieu de la wilaya de Biskra, située à 400 km environ au sud-est d'Alger.
+      </div>
+</header>
+<!--header area end-->
+<!--Menu area start-->
+ <div class="Menu">
+  <div class="Profile">
+   <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFQKNNF883pPA/profile-displayphoto-shrink_800_800/0/1611146333555?e=1618444800&v=beta&t=27ky9soXVOSdu-FYam3KMK6JQyixFK498gJEenRK3iM" alt="profil"><h4>BECHIRI</h4></img>
+    </div>
 
-Capitale des Ziban et premier pôle urbain saharien, la ville comptait 205 608 habitants en 2008 et se place au 10e rang au niveau national. Elle est située sur un point stratégique, car elle est la porte du désert du Sahara.
+<a href="#home"><i class="fas fa-Home"></i><span>Home</span></a>
+<a href="#about"><i class="fas fa-info-circle"></i><span>About</span></a>
+    <a href="#project"><i class="fas fa-cogs"></i><span>project</span></a>
+    <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+    <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+    <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+   </div>
+    <!--Menu area end-->
+<section  id="home">
+  <div class="About_Me">
+  <p><h1><i>Hello</i></h1><span>  Im,</span> <img src="Mee.jpg" class="Me" alt="Cod">
+   <br><h2>BECHIRI MOHAMMED </h2><h3>Im computer science student and <br>   I will become  web developer </h3></p>
+  </div>
+<div class="share-button">
+    <span><i class="fas fa-share-alt"></i>Share!</span>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.linkedin.com/in/bechiri-mohammed-el-bachir-b339541a3/"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
 
-La ville est entourée par les monts du Zab. L'activité agricole est très présente, notamment pour la culture des dattes. Localisée au début du désert du Sahara, Biskra possède un climat désertique chaud.!</p>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="content">
-                <h2>Béjaia</h2>
-                <p>Béjaïa (en berbère : ⴲⴳⴰⵢⵜ, Vgayeth (falsifications "Bgayet" ou Ḇgayet)4,5, en arabe : بجاية, anc. Bougie6), est une commune algérienne située en bordure de la mer Méditerranée, à 220 km à l'est d'Alger. Elle est le chef-lieu de la wilaya de Béjaïa et de la daïra de Béjaïa, en Kabylie.</p>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="content">
-                <h2>ORAN</h2>
-                <p>Oran (en arabe : وهران, Wahrān ; en berbère ⵡⴰⵀⵔⴻⵏ, prononcée localement [wɑhren], surnommée « la radieuse » (en arabe : الباهية, el-Bāhia, en berbère : ⵜⴰⴼⴰⵡⵜ, Tafawt) et « la Joyeuse »2, est la deuxième plus grande ville d’Algérie3 et une des plus importantes villes du Maghreb. C'est une ville portuaire de la mer Méditerranée, située dans le nord-ouest de l'Algérie, à 432 km de la capitale Alger, et le chef-lieu de la wilaya du même nom, en bordure du golfe d'Oran.</p>
-            </div>
-        </div>
-    </section>
-    // testing atom
-</body>
+
+</div>
+
+</section>
+<section  id="about">
+
+</section>
+<section id="project">
+
+</section>
+
 </html>
